@@ -1,0 +1,20 @@
+{
+  "name": "simple-promise-queue",
+  "version": "1.0.0",
+  "description": "Extremely simple queue implementation using Promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "cover": "istanbul cover _mocha --report html -- --recursive -R spec -t 5000"
+  },
+  "keywords": [
+    "queue",
+    "promise"
+  ],
+  "author": "Frantisek Vymazal <frenya@f8.cz> (http://f8.cz)",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "sinon": "^1.17.3"
+  }
+}
