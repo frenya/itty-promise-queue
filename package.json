@@ -1,5 +1,5 @@
 {
-  "name": "simple-promise-queue",
+  "name": "itty-promise-queue",
   "version": "1.0.0",
   "description": "Extremely simple queue implementation using Promises",
   "main": "index.js",
