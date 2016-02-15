@@ -24,7 +24,7 @@ Create a queue with the given processing action and start processing objects.
 ```javascript
 var queue = new Queue(myAction);
 var p1 = queue.enqueue(1),		// myAction(1) gets called immediately
-	p2 = queue.enqueue(2),		// myAction(2) will get called once p1 resolves or rejects
+    p2 = queue.enqueue(2),		// myAction(2) will get called once p1 resolves or rejects
     p3 = queue.enqueue(3);		// myAction(3) will get called once p2 resolves or rejects
 
 p1.then(function (y) {
