@@ -20,5 +20,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "sinon": "^1.17.3"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
   }
 }

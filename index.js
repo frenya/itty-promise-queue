@@ -2,6 +2,8 @@
 /*global require, console, Promise */
 'use strict';
 
+var debug = require('debug')('itty-promise-queue');
+
 // Constructor
 //
 // @param {Function} action
@@ -42,12 +44,15 @@ Queue.prototype.enqueue = function () {
     // Append a call to the action function
     // with the given parameter to the end of queue
     var result = this._queue.then(function() {
+        debug('Calling action for ' + JSON.stringify(args));
         return action.apply(null, args);
     });
 
     // Move the queue's tail
     // Show must go on, so catch and ignore all errors
-    this._queue = result.catch(function(err) {});
+    this._queue = result.catch(function(err) {
+        debug('Warning: ' + err);
+    });
 
     // Return the original promise back to caller
     // NOTE: This is the promise before the catch
