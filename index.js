@@ -27,21 +27,22 @@ function Queue(action) {
 
 // Main public method
 //
-// @param {Any} x Value that will be passed to the action function
+// @param {Any} x Value (or even values) that will be passed to the action function
 // @return Promise that will be resolved by the action's return value
 //
-// Typically, this is an interim Promise that gets first resolved with
+// Typically, the return value is an interim Promise that gets first resolved with
 // another Promise when the action is called and ultimately by
 // the resolution value after the asynchronous operation has completed.
-Queue.prototype.enqueue = function (x) {
+Queue.prototype.enqueue = function () {
     
     // Store action so that we can call it inside then()
-    var action = this._action;
+    var action = this._action,
+        args = arguments;
     
     // Append a call to the action function
     // with the given parameter to the end of queue
     var result = this._queue.then(function() {
-        return action(x);
+        return action.apply(null, args);
     });
 
     // Move the queue's tail
