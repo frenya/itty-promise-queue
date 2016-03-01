@@ -2,3 +2,10 @@ language: node_js
 node_js:
   - "4.1"
   - "4.0"
+install:
+  - npm install -g mocha
+  - npm install
+before_script:
+  - mocha --version
+script:
+  - make test
