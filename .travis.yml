@@ -7,5 +7,3 @@ install:
   - npm install
 before_script:
   - mocha --version
-script:
-  - make test
