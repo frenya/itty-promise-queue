@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/frenya/itty-promise-queue.svg?branch=master)](https://travis-ci.org/frenya/itty-promise-queue)
+
 Promise based implementation of a processing queue. Can be used for queueing any kind of
 asynchronous operations that should be performed one at a time (e.g. sending request to a REST API).
 
